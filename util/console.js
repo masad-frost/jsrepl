@@ -313,6 +313,28 @@ var format = function(f) {
   return str;
 };
 
+
+if(!Sandboss.isFrame) {
+  var postNoWebAPIErr = function (caller) {
+    var data = caller + ' is undefined, please try <a href="/languages/javascript_web">JavaScript (Web)</a> to get full access to WebAPI features';
+    var message = {
+      type: 'web_api',
+      data: data
+    };
+    Sandboss.flush();
+    Sandboss.post(message);
+  };
+  self.prompt = function () {
+    postNoWebAPIErr('prompt');
+  };
+  self.alert = function () {
+    postNoWebAPIErr('alert');
+  };
+  self.confirm = function () {
+    postNoWebAPIErr('confirm');
+  };
+}
+
 var times = {};
 self.console = {
   log: function () {
