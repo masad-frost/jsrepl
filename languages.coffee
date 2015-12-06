@@ -262,54 +262,6 @@
   minifier: 'none'
   emscripted: true
 
-@JSREPL::Languages::python =
-  system_name: 'python'
-  name: 'Python'
-  extension: 'py'
-  matchings: [
-    ['(', ')']
-    ['[', ']']
-    ['{', '}']
-  ]
-  scripts: [
-    'util/utf8.coffee'
-    {
-      opera: 'extern/python/unclosured/python.js'
-      default: 'extern/python/reloop-closured/python.js'
-    }
-  ]
-  includes: [
-    'extern/python/unclosured'
-    'extern/python/closured'
-    'extern/python/reloop-closured'
-  ]
-  engine: 'langs/python/jsrepl_python.coffee'
-  minifier: 'none'
-  emscripted: true
-  
-@JSREPL::Languages::ruby =
-  system_name: 'ruby'
-  name: 'Ruby'
-  extension: 'rb'
-  matchings: [
-    ['(', ')']
-    ['[', ']']
-    ['{', '}']
-  ]
-  scripts: [
-    {
-      firefox_3: 'extern/ruby/dist/ruby.opt.js'
-      opera: 'extern/ruby/dist/ruby.opt.js'
-      default: 'extern/ruby/dist/ruby.closure.js'
-    }
-  ]
-  includes: [
-    'extern/ruby/dist/lib'
-  ]
-  engine: 'langs/ruby/jsrepl_ruby.coffee'
-  minifier: 'none'
-  emscripted: true
-
 @JSREPL::Languages::roy =
   system_name: 'roy'
   name: 'Roy'
