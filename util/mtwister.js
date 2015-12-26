@@ -197,7 +197,7 @@
   /** jsREPL **/
   (function() {
     Math._random = Math.random;
-    var M = new MersenneTwister(42);
+    var M = new MersenneTwister();
     Math.random = function() {
       return M.random();
     };
