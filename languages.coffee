@@ -186,9 +186,9 @@
   engine: 'langs/move/jsrepl_move.coffee'
   minifier: 'closure'
 
-@JSREPL::Languages::traceur =
-  system_name: 'traceur'
-  name: 'Traceur'
+@JSREPL::Languages::babel =
+  system_name: 'babel'
+  name: 'Babel'
   extension: 'js'
   matchings: [
     ['(', ')']
@@ -197,10 +197,10 @@
   ]
   scripts: [
     'util/console.js'
-    'extern/traceur/traceur.js'
+    'extern/babel/babel.js'
   ]
   includes: []
-  engine: 'langs/traceur/jsrepl_traceur.coffee'
+  engine: 'langs/babel/jsrepl_babel.coffee'
   minifier: 'uglify'
 
 @JSREPL::Languages::emoticon =

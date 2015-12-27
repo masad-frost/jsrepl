@@ -4,7 +4,7 @@ class self.JSREPLEngine
     # bindings hide them.
     @inspect = @sandbox.console.inspect
     @sandbox.__eval = @sandbox.eval
-    @traceur = @sandbox.traceur
+    @Babel = @sandbox.Babel
 
     ready()
 
@@ -38,4 +38,4 @@ class self.JSREPLEngine
         return 0
 
   _Compile: (command) ->
-    return @traceur.Compiler.script(command)
+    return @Babel.transform(command, { presets: ['es2015'] }).code
