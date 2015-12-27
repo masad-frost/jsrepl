@@ -16,7 +16,7 @@ A sandboxed polyglot browser REPL.
   * CoffeeScript
   * Kaffeine
   * Move
-  * Traceur (JavaScript.next)
+  * Babel (es2015)
 
 * Esoteric
   * Bloop
