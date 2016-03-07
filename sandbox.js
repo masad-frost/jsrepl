@@ -282,34 +282,4 @@
     }
     return xhr;
   }
-
-  // Synchronous input for emscripted languages.
-  if (self.openDatabaseSync) {
-    var DB = self.openDatabaseSync('replit_input', '1.0', 'Emscripted input', 1024);
-    self.prompt = function () {
-      Sandboss.dbInput();
-      var t = null;
-      DB.transaction(function (tx) {t=tx});
-      var i, j, res;
-      while (!(res = t.executeSql('SELECT * FROM input').rows).length) {
-        for (i = 0; i < 100000000; i++);
-      }
-      t.executeSql('DELETE FROM input');
-      return res.item(0).text;
-    }
-    Sandboss.hide('prompt');
-  } else if (!Sandboss.isFrame) {
-    self.prompt = function () {
-      Sandboss.serverInput();
-      var req = createRequest('GET', Sandboss.input_server.nextUrl(), Sandboss.input_server.cors);
-      req.send(null);
-
-      if (req.status === 200) {  
-        return req.responseText;
-      } else {
-        return 'ERROR: ON NON-WEBKIT BROWSERS CONNECTION TO THE SERVER IS NEEDED FOR INPUT';
-      }
-    };
-  }
-  
 })(this);
