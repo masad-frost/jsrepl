@@ -38,4 +38,4 @@ class self.JSREPLEngine
         return 0
 
   _Compile: (command) ->
-    return @Babel.transform(command, { presets: ['es2015', 'stage-0'] }).code
+    return @Babel.transform(command, { presets: ['es2015-no-commonjs', 'stage-0'] }).code
