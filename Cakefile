@@ -3,7 +3,6 @@
 #------------------------------------------------------------------------------#
 
 fs = require 'fs'
-path = require 'path'
 coffee = require 'coffee-script'
 {exec} = require 'child_process'
 crypto = require 'crypto'
@@ -62,7 +61,7 @@ ensurePathExists = (the_path) ->
   current_path = '.'
   for part in parts
     current_path += '/' + part
-    fs.mkdirSync(current_path, 0o755) if not path.existsSync current_path
+    fs.mkdirSync(current_path, 0o755) if not fs.existsSync current_path
 
 # Builds the interpreter engine including all dependencies for a given language.
 buildEngine = (name, lang, callback) ->
