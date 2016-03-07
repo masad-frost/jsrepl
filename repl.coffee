@@ -181,11 +181,6 @@ UA = do ->
 class JSREPL extends EventEmitter
   constructor: ({ result, error, input, output, progress, @timeout, input_server } = {}) ->
     super()
-    if window.openDatabase?
-      db = openDatabase 'replit_input', '1.0', 'Emscripted input', 1024
-      db.transaction (tx) ->
-        tx.executeSql 'DROP TABLE IF EXISTS input'
-        tx.executeSql 'CREATE TABLE input (text)'
 
     input_server ?= {}
     input_server.input_id = Math.floor(Math.random() * 9007199254740992) + 1
