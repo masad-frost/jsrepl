@@ -49,7 +49,7 @@
 
     JSREPLEngine.prototype._Compile = function(command) {
       return this.Babel.transform(command, {
-        presets: ['es2015']
+        presets: ['es2015', 'stage-0']
       }).code;
     };
 
