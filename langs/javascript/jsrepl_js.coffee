@@ -30,5 +30,7 @@ class self.JSREPLEngine
       if /[\[\{\(]$/.test command
         # An opening brace, bracket or paren; indent.
         return 1
+      else if /[\]\}\)]$/.test command
+        return -1
       else
         return 0
