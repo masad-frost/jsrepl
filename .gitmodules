@@ -15,4 +15,4 @@
 	url = git://github.com/ngn/apl.git
 [submodule "extern/biwascheme"]
 	path = extern/biwascheme
-	url = https://github.com/amasad/biwascheme.git
+	url = git://github.com/masad-frost/biwascheme.git
